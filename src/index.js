@@ -5,20 +5,24 @@ import Scroll from 'react-scroll'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
-
-import  theme  from './Theme.js';
-import { ThemeProvider } from '@emotion/react'
-
+import ThemeProviderComponent from './components/ThemeProviderComponent';
+import  { HelmetProvider } from 'react-helmet-async';
 
 
 const scroll = Scroll.animateScroll
 
+
+
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
         <Provider store={store}>
-        <ThemeProvider theme={theme}>
+        <ThemeProviderComponent>
+        <HelmetProvider>
           <App scroll={scroll} /> 
-          </ThemeProvider>
+          </HelmetProvider>
+          </ThemeProviderComponent>
         </Provider>
   </Router>
 )

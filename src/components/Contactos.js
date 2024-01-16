@@ -1,12 +1,11 @@
-import { Box, Paper, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import EmailIcon from '@mui/icons-material/Email'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
-import languajeReducer from '../reducers/languajeReducer'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const iconComponents = {
     GitHubIcon,
@@ -29,8 +28,6 @@ const iconColors = {
 const Contactos = ({ contacto, last }) => {
     const languaje = useSelector((state) => state.languaje)
     const IconComponent = iconComponents[contacto.icon]
-    console.log(contacto)
-    console.log(last)
 
     return (
         <Box
@@ -49,7 +46,7 @@ const Contactos = ({ contacto, last }) => {
                 sx={{
                     height: '2.5rem',
                     width: '2.5rem',
-                    background: 'rgb(255, 255, 255)',
+                    backgroundColor: 'background.default',
                     borderRadius: '0.5rem',
                     display: 'flex',
                     alignItems: 'center',
@@ -61,20 +58,18 @@ const Contactos = ({ contacto, last }) => {
             </Box>
             <Box>
                 <Typography
+                
                     paddingLeft="0.3rem"
-                    variant="h4"
+                    variant="h3"
                     fontSize="0.75rem"
-                    fontWeight="600"
-                    fontFamily="Poppins,sans-serif"
-                    color={'rgb(68 86 108)'}
-                >
+                    fontWeight="600">
                     {
                         contacto.subtipo.filter(
                             (text) => text.lang === languaje
                         )[0].description
                     }
                 </Typography>
-                <Typography paddingLeft="0.3rem">
+                <Typography paddingLeft="0.3rem" fontSize="1rem" fontWeight="500" >
                     {contacto.description}
                 </Typography>
             </Box>
@@ -94,7 +89,7 @@ const RedSocial = ({ contacto }) => {
                 borderRadius: '0.5rem',
                 height: '2.5rem',
                 width: '2.5rem',
-                background: 'rgb(243, 246, 246)',
+                backgroundColor: 'primary.main',
             }}
         >
             <a

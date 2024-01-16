@@ -1,4 +1,4 @@
-import { Box, Paper, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home'
 import DescriptionIcon from '@mui/icons-material/Description'
 import WorkIcon from '@mui/icons-material/Work'
@@ -63,7 +63,6 @@ function MenuBar() {
 
     const handleActiveElementChange = (selection) => {
         // Dispatch the action
-        console.log(activeElement)  
         dispatch(changeActiveElement(selection));   
       }
 
@@ -75,7 +74,7 @@ function MenuBar() {
                 padding: '30px',
                 marginLeft: 'auto',
                 marginBottom: '2.5rem',
-                background: 'white',
+                backgroundColor: 'background.default',
                 borderRadius: '20px',
                 '@media (max-width:1024px)': {
                     display: 'none',
@@ -104,17 +103,17 @@ function MenuBar() {
                                 flexDirection: 'column',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                width: '73px',
+                                width: '80px',
                                 height: '80px',
                                 marginLeft: '10px',
                                 marginRight: '10px',
-                                background: 'rgb(243 246 246)',
+                                backgroundColor: activeElement !== opcion.description ? 'primary.main': 'secondary.main',
+                                color: activeElement === opcion.description && 'white',
                                 borderRadius: '0.5rem',
                                 transition: '0.3s', // Add a smooth transition effect
                                 '&:hover': {
                                     cursor:'pointer',
-                                    backgroundImage:
-                                        'linear-gradient(to right, #fa5252 0%,  #dd2476 100%)',
+                                    backgroundColor:'secondary.main',
                                     color: 'white',
                                 },
                             }}

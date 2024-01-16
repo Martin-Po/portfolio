@@ -1,7 +1,6 @@
-import { Box, Paper, Typography, Button } from '@mui/material'
+import { Box, Typography, Button } from '@mui/material'
 import { Contactos, RedSocial } from './Contactos'
-import languajeReducer from '../reducers/languajeReducer'
-import { useDispatch, useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import FileDownloadIcon from '@mui/icons-material/FileDownload'
 
@@ -79,7 +78,7 @@ function GeneralInformation() {
     return (
         <Box
             sx={{
-                background: 'white',
+                backgroundColor: 'background.default',
                 flexDirection: 'column',
                 display: 'flex',
                 alignItems: 'center',
@@ -116,7 +115,7 @@ function GeneralInformation() {
                 Martin Ponce
             </Typography>
             <Typography
-                variant="h3"
+                variant="h2"
                 fontSize="1rem"
                 fontWeight="500"
                 paddingRight="1.25rem"
@@ -124,7 +123,7 @@ function GeneralInformation() {
                 paddingTop="0.375"
                 paddingBottom="0.375"
             >
-                Fullstack Developer
+                {languaje === 'ESP' ? 'Desarrollador Fullstack' :'Fullstack Developer' }
             </Typography>
             <Box
                 sx={{
@@ -147,7 +146,7 @@ function GeneralInformation() {
                     marginTop: '1.75rem',
                     padding: '1.75rem',
                     borderRadius: '1rem',
-                    background: 'rgb(243, 246, 246)',
+                    backgroundColor: 'primary.main',
                 }}
             >
                 {contactos &&
@@ -162,7 +161,7 @@ function GeneralInformation() {
                         ))}
             </Box>
 
-            <Button
+            <Button onClick={(e) => {window.open(languaje === 'ESP' ? "https://docs.google.com/document/d/1IVdKT5g60sTChYOhn8xUpR3C6iywfwWh/edit?usp=drive_link&ouid=101327751041443045711&rtpof=true&sd=true" :"https://docs.google.com/document/d/16L653pEMthxPEdgU4EXn7rCfryTpdqiL/edit?usp=drive_link&ouid=101327751041443045711&rtpof=true&sd=true", "_blank");}}
                 sx={{
                     marginTop: '1.5rem',
                     paddingTop: '0.75rem',
@@ -171,13 +170,17 @@ function GeneralInformation() {
                     paddingRight: '2rem',
                     borderRadius: '35px',
                     fontSize: '1.125rem',
+                    backgroundColor:'secondary.main'
                     
                 }}
 
                 variant="contained"
-                startIcon={<FileDownloadIcon />}
+                startIcon={<FileDownloadIcon sx={{color: 'secondary.contrastText'}}/>}
             >
-                {languaje === 'ESP' ? 'Descargar CV' : 'Download CV'}
+                <Typography sx={{color:'secondary.contrastText'}}>
+                    {languaje === 'ESP' ? 'Descargar CV' : 'Download CV'}
+                </Typography>
+                    
             </Button>
         </Box>
     )
