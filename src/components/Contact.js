@@ -6,6 +6,8 @@ import messagesService from '../services/messages'
 
 import { useField } from '../hooks/useField'
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
+
 
 function Contact() {
     const languaje = useSelector((state) => state.languaje)
@@ -98,6 +100,24 @@ function Contact() {
 
     return (
         <Box>
+               <Helmet>
+            <meta charset="utf-8" />
+            <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="theme-color" content="#000000" />
+            <meta name="google-site-verification" content="fNBbPJ2a7b3nVvqsGHzQb85BUT6c-7Q8R5idXOV5v5A" />
+            <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+            <title>Martin Ponce - Contácteme</title>
+            <meta name="description" content="Póngase en contacto conmigo." />
+            <link rel="canonical" href="/portfolio/Contact" />
+            
+            <meta property="og:title" content="Martin Ponce - Contácteme"/>
+        <meta property="og:description" content="Póngase en contacto conmigo."/>
+        <meta property="og:url" content="https://martin-po.github.io/portfolio/Contact" />
+        <meta property="og:image" content="https://martin-po.github.io/portfolio/static/media/foto_cv.55b773319a5f6d83adfe.png" />
+        <meta property="og:type" content="website" /> 
+            </Helmet>
             <Box
                 sx={{
                     display: 'flex',

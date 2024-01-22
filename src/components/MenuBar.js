@@ -4,6 +4,7 @@ import DescriptionIcon from '@mui/icons-material/Description'
 import WorkIcon from '@mui/icons-material/Work'
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from "react-router-dom";
 
 import {changeActiveElement} from '../reducers/menuelementReducer'
 
@@ -58,10 +59,12 @@ const ObjMenuOptions = [
 function MenuBar() {
     const languaje = useSelector((state) => state.languaje)
     const activeElement = useSelector((state) => state.activeElement)
+    const navigate  = useNavigate();
 
     const dispatch = useDispatch()
 
     const handleActiveElementChange = (selection) => {
+        navigate("Portfolio/"+selection);
         // Dispatch the action
         dispatch(changeActiveElement(selection));   
       }

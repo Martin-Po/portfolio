@@ -1,6 +1,8 @@
 import { Box, Grid, Typography, Chip, Alert } from '@mui/material'
 import { useSelector } from 'react-redux'
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
+
 
 const technologies = [
     {
@@ -316,6 +318,21 @@ const technologies = [
             },
         ],
     },
+    {
+        id: 24,
+        type: 'protocol',
+        name: 'JWT',
+        description: [
+            {
+                lang: 'ESP',
+                description: 'JSON Web Token',
+            },
+            {
+                lang: 'ENG',
+                description: 'JSON Web Token',
+            },
+        ],
+    },
 ]
 
 const Proyects = [
@@ -332,7 +349,7 @@ const Proyects = [
             },
         ],
         URL: 'https://landing-page-demo4.fly.dev/',
-        img: require('../images/landing_page.png'),
+        img: process.env.PUBLIC_URL + '/images/landing_page.png',
         technologies: ['JavaScript', 'React.js', 'Redux', 'Custom hooks', 'Material UI', 'Node.js', 'Express.js'],
     }, {
         id: 2,
@@ -347,7 +364,7 @@ const Proyects = [
             },
         ],
         URL: 'https://countries-app-kf5p.onrender.com/',
-        img: require('../images/countries-app.png'),
+        img: process.env.PUBLIC_URL + '/images/countries-app.png',
         technologies: ['JavaScript', 'React.js', 'Redux', 'Axios', 'External API', 'Material UI'],
     }, {
         id: 3,
@@ -362,7 +379,7 @@ const Proyects = [
             },
         ],
         URL: 'https://weather-app-tko0.onrender.com/',
-        img: require('../images/weather-app.png'),
+        img: process.env.PUBLIC_URL + '/images/weather-app.png',
         technologies: ['JavaScript', 'React.js', 'Redux', 'Axios', 'External API', 'Material UI'],
     },
     {
@@ -378,8 +395,8 @@ const Proyects = [
             },
         ],
         URL: 'https://todo-list-app-080t.onrender.com/',
-        img: require('../images/todo-list-app.png'),
-        technologies: ['JavaScript', 'React.js', 'Redux', 'Axios', 'External API', 'Material UI', 'Express.js', 'Postman API', 'MongoDB', 'Mongoose', 'Node.js' ],
+        img: process.env.PUBLIC_URL + '/images/todo-list-app.png',
+        technologies: ['JavaScript', 'REST API', 'React.js', 'Redux', 'Axios', 'External API', 'Material UI', 'Express.js', 'Postman API', 'MongoDB', 'Mongoose', 'Node.js', 'JWT'],
     }
 ]
 
@@ -399,6 +416,25 @@ function Works() {
 
     return (
         <Box>
+            <Helmet>
+            <meta charset="utf-8" />
+            <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="theme-color" content="#000000" />
+            <meta name="google-site-verification" content="fNBbPJ2a7b3nVvqsGHzQb85BUT6c-7Q8R5idXOV5v5A" />
+            <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+            <title>Martin Ponce - Proyectos</title>
+            <meta name="description" content="Colección de mis proyectos de desarrollo web, cada uno con enlaces a demostraciones en vivo y al código fuente en GitHub." />
+            <link rel="canonical" href="/portfolio/Works" />
+            
+            <meta property="og:title" content="Martin Ponce - Proyectos"/>
+        <meta property="og:description" content="Colección de mis proyectos de desarrollo web, cada uno con enlaces a demostraciones en vivo y al código fuente en GitHub."/>
+        <meta property="og:url" content="https://martin-po.github.io/portfolio/Works" />
+        <meta property="og:image" content="https://martin-po.github.io/portfolio/static/media/foto_cv.55b773319a5f6d83adfe.png" />
+        <meta property="og:type" content="website" /> 
+            </Helmet>
+
             <Box
                 sx={{
                     display: 'flex',

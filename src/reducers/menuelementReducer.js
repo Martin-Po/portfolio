@@ -2,10 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const activeElementSlice = createSlice({
     name: 'activeElement',
-    initialState: 'Home',
+    initialState: "Portfolio/" + window.location.pathname.split('/')[1] || 'Portfolio/Home',
 
     reducers: {
         setactiveElement(state, action) {
+            
             return action.payload
         },
     },
